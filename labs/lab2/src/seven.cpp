@@ -78,6 +78,7 @@ bool Seven::Smaller(const Seven& other) const noexcept {
     }
     return _digits.Get(0) < other._digits.Get(0);
 }
+
 bool Seven::Greater(const Seven& other) const noexcept {
     if (_digits.Size() < other._digits.Size()) {
         return false;
@@ -97,7 +98,7 @@ bool Seven::Greater(const Seven& other) const noexcept {
     return _digits.Get(0) > other._digits.Get(0);
 }
 
-Seven Add(const Seven& first, const Seven& second) {
+Seven Seven::Add(const Seven& first, const Seven& second) {
     Seven result(std::max(first._digits.Size(), second._digits.Size()) + 1, 0);
 
     std::size_t minLength = std::min(first._digits.Size(), second._digits.Size());
@@ -123,7 +124,7 @@ Seven Add(const Seven& first, const Seven& second) {
     return result;
 }
 
-Seven Subtract(const Seven& first, const Seven& second) {
+Seven Seven::Subtract(const Seven& first, const Seven& second) {
     if (first._digits.Size() < second._digits.Size()) {
         throw std::invalid_argument("First number must be greater or equal to second");
     }

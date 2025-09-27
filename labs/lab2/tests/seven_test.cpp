@@ -105,7 +105,7 @@ TEST(OperationTests, AdditionTest) {
     Seven second("6");
     Seven expected("132");
 
-    Seven result = Add(first, second);
+    Seven result = Seven::Add(first, second);
     ASSERT_TRUE(expected.Equals(result));
 }
 
@@ -114,7 +114,7 @@ TEST(OperationTests, SubtractionTest) {
     Seven second("6");
     Seven expected("114");
 
-    Seven result = Subtract(first, second);
+    Seven result = Seven::Subtract(first, second);
     ASSERT_TRUE(expected.Equals(result));
 }
 
@@ -123,7 +123,7 @@ TEST(OperationTests, SubtractionResultZeroTest) {
     Seven second("123");
     Seven expected("0");
 
-    Seven result = Subtract(first, second);
+    Seven result = Seven::Subtract(first, second);
     ASSERT_TRUE(expected.Equals(result));
 }
 
@@ -132,7 +132,7 @@ TEST(OperationTests, SubtractionCollapsOfNumberTest) {
     Seven second("1234560123455");
     Seven expected("1");
 
-    Seven result = Subtract(first, second);
+    Seven result = Seven::Subtract(first, second);
     ASSERT_TRUE(expected.Equals(result));
 }
 
@@ -141,7 +141,7 @@ TEST(OperationTests, BadSubtractionTest) {
         Seven first("123");
         Seven second("6");
 
-        Seven result = Subtract(second, first);
+        Seven result = Seven::Subtract(second, first);
     }, std::invalid_argument);
 }
 

@@ -20,12 +20,9 @@ public:
     bool Greater(const Seven& other) const noexcept;
     bool Smaller(const Seven& other) const noexcept;
 
-    friend Seven Add(const Seven& first, const Seven& second);
-    friend Seven Subtract(const Seven& first, const Seven& second);
+    static Seven Add(const Seven& first, const Seven& second);
+    static Seven Subtract(const Seven& first, const Seven& second);
 
 private:
     Array _digits;
 };
-
-Seven Add(const Seven& first, const Seven& second);
-Seven Subtract(const Seven& first, const Seven& second);
